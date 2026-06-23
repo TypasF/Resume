@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Libre Baskerville";
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "header" "about-me" "main" "soft-skills" "extras" "contact" "footer";
+  margin: 0 auto;
+  background-color: #FAFAFA;
+  color: #1A202C;
+}
+.container img {
+  width: 20px;
+}
+.container h2 {
+  width: 100%;
+  text-decoration: underline;
+  text-align: center;
+}
+.container header {
+  grid-area: header;
+  background-color: #0F172A;
+  color: #F8FAFC;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container header img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 100px;
+}
+.container .about-me {
+  grid-area: about-me;
+  background-color: #b3bfd0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  text-align: justify;
+}
+.container main {
+  grid-area: main;
+  background: #adadad;
+  background: linear-gradient(145deg, rgb(173, 173, 173) 0%, rgb(255, 255, 255) 50%, rgb(100, 100, 100) 100%);
+}
+.container main .education,
+.container main .tech-skills,
+.container main .languages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container main .education ul,
+.container main .tech-skills ul,
+.container main .languages ul {
+  align-self: flex-start;
+}
+.container main .education ul {
+  list-style-type: none;
+}
+.container main .education ul li p:first-of-type {
+  font-size: 1.2rem;
+}
+.container main .education ul li p:nth-of-type(2) {
+  margin-left: 8px;
+  margin-top: -8px;
+}
+.container main .languages ul li p:nth-of-type(2),
+.container main .languages ul li p:nth-of-type(3) {
+  font-size: 0.9em;
+  margin-left: 8px;
+  margin-top: -12px;
+}
+.container .soft-skills {
+  grid-area: soft-skills;
+  background-color: #b3bfd0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .soft-skills ul {
+  align-self: flex-start;
+}
+.container .extras {
+  grid-area: extras;
+  background-color: #b3bfd0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .extras ul {
+  align-self: flex-start;
+}
+.container .extras ul li:first-of-type p:nth-of-type(2) {
+  font-size: 0.9em;
+  margin-left: 8px;
+  margin-top: -12px;
+}
+.container .contact {
+  grid-area: contact;
+  background-color: #b3bfd0;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 16px;
+}
+.container .contact a {
+  text-decoration: none;
+  color: inherit;
+}
+.container .contact a:hover {
+  color: #FAFAFA;
+}
+.container .contact a:active {
+  color: rgb(127, 0, 0);
+}
+.container .contact ul {
+  list-style-type: none;
+}
+.container .contact ul li {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .contact ul li img {
+  width: 100px;
+}
+.container footer {
+  grid-area: footer;
+  background-color: #0F172A;
+  color: #FAFAFA;
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "header header header" "about-me main extras" "soft-skills main contact" "footer footer footer";
+  }
+  .container header {
+    flex-direction: row;
+  }
+  .container .soft-skills,
+  .container main,
+  .container .contact {
+    border-bottom: 8px solid #0F172A;
+  }
+}/*# sourceMappingURL=style.css.map */

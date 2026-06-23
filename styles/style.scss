@@ -1,0 +1,227 @@
+$main-background-color: #0F172A;
+$aside-background-color: #b3bfd0;
+$main-color: #FAFAFA;
+$header-text-color: #F8FAFC;
+$active-color: rgb(127, 0, 0);  
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Libre Baskerville";
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "header"
+        "about-me"
+        "main"
+        "soft-skills"
+        "extras"
+        "contact"
+        "footer";
+    margin: 0 auto;
+    background-color: $main-color;
+    color: #1A202C;
+
+    img {
+        width: 20px;
+    }
+
+    h2 {
+        width: 100%;
+        text-decoration: underline;
+        text-align: center;
+    }
+
+    header {
+        grid-area: header;
+        background-color: $main-background-color;
+        color: $header-text-color;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 100px;
+        }
+
+
+
+    }
+
+    .about-me {
+        grid-area: about-me;
+        background-color: $aside-background-color;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+        text-align: justify;
+
+    }
+
+    main {
+
+        grid-area: main;
+
+        background: #adadad;
+        background: linear-gradient(145deg, rgba(173, 173, 173, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(100, 100, 100, 1) 100%);
+
+        .education,
+        .tech-skills,
+        .languages {
+            @include flex-center();
+
+            ul {
+                align-self: flex-start;
+            }
+
+        }
+
+        .education {
+            ul {
+                list-style-type: none;
+
+                li {
+                    p:first-of-type {
+                        font-size: 1.2rem;
+                    }
+
+                    p:nth-of-type(2) {
+                        margin-left: 8px;
+                        margin-top: -8px;
+                    }
+                }
+            }
+        }
+
+
+        .languages {
+            ul {
+                li {
+
+
+                    p:nth-of-type(2),
+                    p:nth-of-type(3) {
+                        font-size: 0.9em;
+                        margin-left: 8px;
+                        margin-top: -12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .soft-skills {
+        grid-area: soft-skills;
+        background-color: $aside-background-color;
+        @include flex-center();
+
+        ul {
+            align-self: flex-start;
+        }
+    }
+
+    .extras {
+        grid-area: extras;
+        background-color: $aside-background-color;
+        @include flex-center();
+
+        ul {
+            align-self: flex-start;
+
+            li {
+                &:first-of-type {
+                    p:nth-of-type(2) {
+                        font-size: 0.9em;
+                        margin-left: 8px;
+                        margin-top: -12px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .contact {
+        grid-area: contact;
+        background-color: $aside-background-color;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 16px; 
+
+        a {
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+                color: $main-color; 
+            }
+
+            &:active {
+                color: $active-color;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+
+            li {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                img {
+                    width: 100px;
+                }
+
+            }
+        }
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: $main-background-color;
+        color: $main-color;
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: "header header header"
+            "about-me main extras"
+            "soft-skills main contact"
+            "footer footer footer";
+
+        header {
+            flex-direction: row;
+        }
+
+        .soft-skills,
+        main,
+        .contact {
+            border-bottom: 8px solid $main-background-color;
+        }
+
+    }
+}

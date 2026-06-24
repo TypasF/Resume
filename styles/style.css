@@ -55,7 +55,7 @@ body {
 .container main .languages {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .container main .education ul,
@@ -69,7 +69,8 @@ body {
 .container main .education ul li p:first-of-type {
   font-size: 1.2rem;
 }
-.container main .education ul li p:nth-of-type(2) {
+.container main .education ul li p:nth-of-type(2),
+.container main .education ul li p:nth-of-type(3) {
   margin-left: 8px;
   margin-top: -8px;
 }
@@ -84,7 +85,7 @@ body {
   background-color: #b3bfd0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .container .soft-skills ul {
@@ -95,7 +96,7 @@ body {
   background-color: #b3bfd0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .container .extras ul {
@@ -131,8 +132,8 @@ body {
 .container .contact ul li {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  margin-right: 64px;
 }
 .container .contact ul li img {
   width: 100px;

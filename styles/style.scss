@@ -181,6 +181,11 @@ body {
             &:active {
                 color: $active-color;
             }
+
+            img {
+                position: relative;
+                top: 4px; 
+            }
         }
 
         ul {

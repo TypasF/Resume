@@ -126,6 +126,10 @@ body {
 .container .contact a:active {
   color: rgb(127, 0, 0);
 }
+.container .contact a img {
+  position: relative;
+  top: 4px;
+}
 .container .contact ul {
   list-style-type: none;
 }
